@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'taco-backend.vercel.app'  # Substitua pelo domínio real do seu backend no Vercel
+    'taco-backend-9.onrender.com'  # Substitua pelo domínio real do backend no Render
 ]
 
 
