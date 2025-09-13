@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g_-4iy7+3t9uaao(ec!%ebn@(m@)xpj107u_vp2#ll(j)8l&w^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['taco-backend-8.onrender.com']
 
 
 # Application definition
