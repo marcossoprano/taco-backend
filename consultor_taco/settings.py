@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-g_-4iy7+3t9uaao(ec!%ebn@(m@)xpj107u_vp2#ll(j)8l&w^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['taco-backend-8.onrender.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'taco-backend.vercel.app'  # Substitua pelo domínio real do seu backend no Vercel
+]
 
 
 # Application definition

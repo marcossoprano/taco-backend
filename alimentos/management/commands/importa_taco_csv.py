@@ -38,7 +38,7 @@ class Command(BaseCommand):
                 if str(val).strip() in ['Tr', '-', '']:
                     return 0.0
                 return 0.0
-        for _, row in df.iterrows():
+        for idx, row in df.iterrows():
             nome = str(row[nome_col]).strip()
             calorias = parse_float(row[energia_col]) if energia_col else 0.0
             proteinas = parse_float(row[proteina_col]) if proteina_col else 0.0
@@ -54,4 +54,6 @@ class Command(BaseCommand):
                 }
             )
             count += 1
+            if count % 100 == 0:
+                print(f'{count} alimentos importados...')
         self.stdout.write(self.style.SUCCESS(f'Importação concluída! {count} alimentos importados.'))
