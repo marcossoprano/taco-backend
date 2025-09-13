@@ -16,9 +16,8 @@ class ConsultaAlimentoAPIView(APIView):
 			quantidade = float(quantidade)
 		except ValueError:
 			return Response({'erro': 'Quantidade deve ser um número.'}, status=status.HTTP_400_BAD_REQUEST)
-		try:
-			alimento = Alimento.objects.get(nome__iexact=nome)
-		except Alimento.DoesNotExist:
+		alimento = Alimento.objects.filter(nome__icontains=nome).first()
+		if not alimento:
 			return Response({'erro': 'Alimento não encontrado.'}, status=status.HTTP_404_NOT_FOUND)
 		fator = quantidade / 100.0
 		resultado = {
@@ -30,7 +29,7 @@ class ConsultaAlimentoAPIView(APIView):
 			'gorduras': round(alimento.gorduras * fator, 2),
 		}
 		return Response(resultado)
-
+ 
 
 # Endpoint para sugestões de alimentos
 from rest_framework.views import APIView
